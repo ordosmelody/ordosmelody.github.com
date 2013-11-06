@@ -1,0 +1,94 @@
+<div id="naf" class="page row-fluid">
+    
+    <div class="page-head border-bottom span6 visible-phone">
+        
+        <h1>About teams</h1>
+        
+    </div>
+    
+    <div class="page-head page-vertical border-right span6 hidden-phone">
+        
+        <img src="img/team/logo.png" id="teams" width="520" height="400" alt="" />
+        
+    </div>
+    
+    <div class="page-content sub-page-content page-vertical span6">
+        
+			<ul id="sample-roundabout">
+				<li>
+					<div class="wrapper">
+						<img src="img/team/fyy.png" alt="melody" />
+						<h3>Melody</h3>
+						<p>
+							傅阳阳，2003年7月毕业于集宁师范学院，于2006年取得吉林师大英语专业学士学位。
+						</p>
+					</div>
+				</li>
+				<li>
+					<div class="wrapper">
+						<img src="img/team/fyy.png" alt="melody" />
+					</div>
+				</li>
+				<li>
+					<div class="wrapper">
+						<img src="img/team/fyy.png" alt="melody" />
+					</div>
+				</li>
+			</ul>
+    </div>
+    
+</div>
+<style>
+#teams {
+position: relative;
+top: 50%;
+margin: -260px 0 0 20px;
+}
+#sample-roundabout {
+width: 30%;
+list-style: none;
+margin: 0;
+padding: 0;
+float: right;
+height: 20em;
+position: absolute;
+top: 25%;
+right: 10%;
+z-index: 7;
+}
+#sample-roundabout li {
+background-color: #ffd41a;
+height: 20em;
+width: 18em;
+box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+cursor: pointer;
+}
+#sample-roundabout li.roundabout-in-focus {
+cursor: auto;
+}
+#sample-roundabout li .wrapper {
+padding: 1em;
+}
+
+#sample-roundabout .wrapper h3 {
+font-size: 1.5em;
+line-height: 1.1;
+padding-top: -10px;
+margin-top: 0;
+text-align: center;
+color: #fff !important;
+}
+#sample-roundabout .wrapper p {
+margin-top: 4em;
+font-size: 1em;
+text-align: center;
+width: auto;
+color: #fff !important;
+}
+
+</style>
+<script>
+   $(document).ready(function() {
+      $('ul').roundabout();
+   });
+</script> 

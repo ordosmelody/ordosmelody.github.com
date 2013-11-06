@@ -1,0 +1,155 @@
+.select {
+    position: relative;
+    display: block;
+    width: inherit;
+    height: 48px;
+}
+
+.select[class~="small"] {
+    height: 38px;
+}
+
+.select .icon {
+    width: 23px;
+    height: 13px;
+    background-image: url("../img/select/icon.png");
+    background-repeat: no-repeat;
+    background-size: 23px 13px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 86%;
+    pointer-events: none;
+}
+
+.select[class~="small"] .icon {
+    margin-top: 14px;
+    margin-left: 82%;
+}
+
+.select-menu {
+    position: absolute;
+    display: block;
+    width: inherit;
+    height: 48px;
+    background-color: #fff;
+    
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    font-weight: bold;
+    font-size: 20px;
+    
+    border-radius: 6px;
+    border: 2px solid #93896d;
+    
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+    transition: height 0.5s ease;
+}
+
+.select[class~="small"] .select-menu {
+    font-size: 14px;
+    height: 38px;
+    border: none;
+    text-align: left;
+}
+
+.select-menu[class~="open"] {
+    height: 250px;
+    /* overflow-y: auto; */ 
+}
+
+.select[class~="small"] .select-menu[class~="open"] {
+    height: 114px;
+    /* overflow-y: auto; */
+}
+
+    .select .select-item {
+        display: block;
+        height: 48px;
+        line-height: 48px;
+        padding: 0 16px;
+        border-radius: 6px;
+        transition: background-color 0.25s ease;
+    }
+
+    .select[class~="small"] .select-menu .select-item {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .no-touch .select .select-item:hover {
+        background-color: #ffdd00; 
+    }
+
+    .select .select-item:hover {
+        text-decoration: none;
+    }
+
+@media (max-width: 767px) {
+    
+    .select {
+        height: 82px;
+    }
+
+    .select-menu[class~="open"] {
+        height: 209px;
+        overflow-y: auto;
+    }
+
+    .select .icon {
+        width: 46px;
+        height: 26px;
+        background-size: 46px 26px;
+        margin-top: 32px;
+    }
+
+    .select-menu {
+        width: inherit;
+        height: 82px;
+        font-size: 40px;
+        border-radius: 12px;
+    }
+
+    .select .select-item {
+        height: 82px;
+        font-size: 34px;
+        line-height: 82px;
+        padding: 0 24px;
+    }
+    
+    .no-touch .select .select-item:hover {
+        text-decoration: none;
+        background-color: transparent;
+    }
+
+    .select[class~="small"] {
+        height: 58px;
+    }
+
+    .select[class~="small"] .icon {
+        width: 40px;
+        height: 20px;
+        background-size: 40px 20px;
+        margin-top: 22px;
+        margin-left: 88%;
+    }
+
+    .select[class~="small"] .select-menu[class~="open"] {
+    }
+
+    .select[class~="small"] .select-menu {
+        font-size: 20px;
+        height: 58px; /* 38 */
+        border: none;
+        text-align: left;
+    }
+
+    .select[class~="small"] .select-menu .select-item {
+        height: 58px;
+        line-height: 58px;
+    }
+
+}

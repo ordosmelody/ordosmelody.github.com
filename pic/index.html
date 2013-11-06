@@ -1,0 +1,134 @@
+ <div class="container demo-2">
+
+            <div id="slider" class="sl-slider-wrapper">
+
+				<div class="sl-slider">
+				
+					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-1"></div>
+							<h2>学生晋级合影</h2>
+							<blockquote><cite>有奖励，就有学习的动力</<cite><br/><cite>兴趣是最好的老师</cite></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-2"></div>
+							<h2>学习场景</h2>
+							<blockquote><cite>并不所求纪律</<cite><br/><cite>『散漫』中将知识融入快乐</cite></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-3"></div>
+							<h2>角色扮演后的演讲</h2>
+							<blockquote><cite>游戏刚刚尽兴</<cite><br/><cite>让我们一起用英语回顾一下</cite></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-4"></div>
+							<h2>中文识字</h2>
+							<blockquote><cite>英语学习的同时</<cite><br/><cite>快乐的学习汉语知识</cite></blockquote>
+						</div>
+					</div>
+					
+					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+						<div class="sl-slide-inner">
+							<div class="bg-img bg-img-5"></div>
+							<h2>听课瞬间</h2>
+							<blockquote><cite>参与课堂</<cite><br/><cite>才能在其中找寻到真正的乐趣</cite></blockquote>
+						</div>
+					</div>
+				</div><!-- /sl-slider -->
+
+				<nav id="nav-dots" class="nav-dots">
+					<span class="nav-dot-current"></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</nav>
+
+			</div><!-- /slider-wrapper -->
+
+        </div>
+        <script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
+		<script type="text/javascript">	
+			$(function() {
+			
+				var Page = (function() {
+					
+					$(".demo-2 .sl-slider-wrapper").css("height",$(window).height());
+					$("#page-loader").fadeIn(600, function() {
+			                // hide preloader
+			                $("#page-loader").delay(800).fadeOut(800);
+			        });
+					
+					var $navArrows = $( '#nav-arrows' ),
+						$nav = $( '#nav-dots > span' ),
+						slitslider = $( '#slider' ).slitslider( {
+							onBeforeChange : function( slide, pos ) {
+
+								$nav.removeClass( 'nav-dot-current' );
+								$nav.eq( pos ).addClass( 'nav-dot-current' );
+
+							}
+						} ),
+
+						init = function() {
+
+							initEvents();
+							
+						},
+						initEvents = function() {
+
+							// add navigation events
+							$navArrows.children( ':last' ).on( 'click', function() {
+
+								slitslider.next();
+								return false;
+
+							} );
+
+							$navArrows.children( ':first' ).on( 'click', function() {
+								
+								slitslider.previous();
+								return false;
+
+							} );
+
+							$nav.each( function( i ) {
+							
+								$( this ).on( 'click', function( event ) {
+									
+									var $dot = $( this );
+									
+									if( !slitslider.isActive() ) {
+
+										$nav.removeClass( 'nav-dot-current' );
+										$dot.addClass( 'nav-dot-current' );
+									
+									}
+									
+									slitslider.jump( i + 1 );
+									return false;
+								
+								} );
+								
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+			
+			});
+		</script>

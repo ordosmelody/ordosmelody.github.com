@@ -1,0 +1,69 @@
+<div id="home" class="page">
+
+    <div class="page-head">
+        
+    	<div id="skyline"></div>
+    	<div id="train" class="hidden-phone"></div>
+    	<div class="cloud left"></div>
+    	<div class="cloud right"></div>
+
+        <div id="badge"></div>
+    	
+    </div>
+    
+    <div id="logo"></div>
+    
+    <div class="page-content text-center">
+        
+        <p>美乐迪英语学校于2011年9月18日建校。</p>
+
+        <p>成立以来，全体教师以责任心、耐心、爱心对待每一个学生为理念；以先提高兴趣，再提高成绩为宗旨；以培养孩子良好的语感和英文思维，进而提高听、说、读、写能力为目标，得到了众多的学生和家长的加入与认可。</p>
+        
+    </div>
+        
+    <div class="page-nav text-center">
+        
+        <a href="/about" class="default-btn nav-btn">学校介绍</a>
+    
+    </div>
+    
+</div>
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	initTrain();
+	initBoat();
+	initCloudLeft();
+	initCloudRight();	
+    
+    $('.nav-btn').address();
+    
+});
+
+
+function initTrain(){
+
+	$('#train').css({backgroundPosition: Math.round($(window).width() + 482) + "px 100%"});
+    
+	TweenMax.to($('#train'), 4, {css:{backgroundPosition: "-1000px 100%"}, delay: 2, onComplete: initTrain, ease: Linear.easeNone});
+}
+
+function initCloudLeft(){
+	
+	TweenMax.to($('.cloud.left'), 9, {css:{backgroundPosition: "10% 100%"}, repeat: -1, yoyo: true, ease: Quad.easeInOut});
+}
+
+function initCloudRight(){
+	
+	TweenMax.to($('.cloud.right'), 7, {css:{backgroundPosition: "90% 100%"}, repeat: -1, yoyo: true, delay: .6, ease: Quad.easeInOut});
+}
+
+function initBoat(){
+	
+	$('#boat').css('backgroundPositionX', "10%");
+	TweenMax.to($('#boat'), 4, {css:{backgroundPosition: "20% 100%"}, repeat: -1, yoyo: true, ease: Quad.easeInOut});
+}
+
+</script>

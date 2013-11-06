@@ -1,0 +1,31 @@
+	<div id="map"></div>
+
+	<script src="js/leaflet.js"></script>
+	<script type="text/javascript">
+		$("#page-loader").fadeIn(600, function() { $("#page-loader").delay(800).fadeOut(800); });
+		$("#map").css("width","100%");
+		$("#map").css("height","100%");
+		var map = L.map('map').setView([39.72434,109.853855], 13);
+
+		L.tileLayer('http://{s}.tile.cloudmade.com/c99c85888a7f45478c51e4b1d706c53a/997/256/{z}/{x}/{y}.png', {
+			attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
+			key: 'c99c85888a7f45478c51e4b1d706c53a',
+			maxZoom: 18
+		}).addTo(map);
+
+		var LeafIcon = L.Icon.extend({
+			options: {
+				shadowUrl: 'img/contact/leaf-shadow.png',
+				iconSize:     [38, 95],
+				shadowSize:   [50, 64],
+				iconAnchor:   [22, 94],
+				shadowAnchor: [4, 62],
+				popupAnchor:  [-3, -76]
+			}
+		});
+
+		var greenIcon = new LeafIcon({iconUrl: 'img/contact/leaf-green.png'});
+		L.marker([39.72434,109.853855], {icon: greenIcon}).bindPopup("Melody English Education").addTo(map);
+
+
+	</script>
